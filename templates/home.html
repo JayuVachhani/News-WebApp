@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!--    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"/>-->
+<!--    <link rel = "stylesheet" href="{{url_for('static',filename = 'script.js')}}">-->
+    <title>News App</title>
+
+</head>
+
+<body style="width:100%;">
+<div class=" text-center" style="margin-bottom:0">
+  <h2>BroadCast WebApp</h2>
+
+</div>
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto" style="font-size:20px">
+      <li class="nav-item" >
+        <a class="nav-link" href="/home">Home </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/news">News</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contact">Contact Us</a>
+      </li>
+         <li class="nav-item">
+        <a class="nav-link" href="/shownews">Show News</a>
+      </li>
+    </ul>
+    <span class="navbar-item">
+      <p style="float:right;"><strong>Current Time:=</strong>{{today}}
+        <nav id="navbar-example2" class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="/logout">Logout</a>
+
+    </span>
+  </div>
+</nav>
+
+<!--for current time-->
+<!--<p style="float:right;"><strong>Current Time:=</strong>{{today}}</p>-->
+<br>
+{% block body %}{% endblock %}
+
+</body>
+</html>

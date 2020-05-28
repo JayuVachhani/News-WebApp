@@ -1,0 +1,27 @@
+{% extends 'home.html' %}
+{% block body %}
+
+ <h3 style="text-align:center;margin-top:3%">Contact us</h3>
+
+
+
+<div class="container">
+  <form style="text-align:center;" method="post" action="/contact/"><br>
+    <label>Full Name</label><br>
+    <input type="text" style="text-align:center;border:2px solid green;width:190px;height:40px" name="fullname" placeholder="Your full name.."><br>
+
+
+    <label>Email</label><br>
+    <input type="text" style="text-align:center;border:2px solid green;width:190px;height:40px" name="email" placeholder="Your Email id.."><br>
+
+    <label>Problem Heading</label><br>
+    <input type="text"  style="text-align:center;border:2px solid green;width:190px;height:40px" name="heading" placeholder="Your Problem heading.."><br>
+
+    <label >Subject</label><br>
+    <textarea id="subject" style="text-align:center;border:2px solid green;width:190px;height:40px;height:200px" name="subject" placeholder="Write something.." ></textarea><br>
+
+    <input class="btn btn-primary" type="submit" value="Submit">
+  </form>
+
+</div>
+ {% endblock %}

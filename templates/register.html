@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Registration</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+
+
+<h2 style="text-align:center;margin-top:15%">Register</h2>
+<section class="container" style="text-align:center;">
+{% from "_helper.html" import render_field %}
+
+      <form method="post" action="/register/" >
+        <p><input type="text" style="text-align:center;border:2px solid green;width:190px;height:40px" name="username" value="" placeholder="Username"></p>
+          <p><input type="email" style="text-align:center;border:2px solid green;width:190px;height:40px" name="email" value="" placeholder="Email"></p>
+        <p><input type="password" style="text-align:center;border:2px solid green;width:190px;height:40px" name="password" value="" placeholder="Password"></p>
+
+
+        <input  class="btn btn-success" type="submit"  value="Register">
+      </form>
+    {% if error %}
+        <p class="error"><strong>Error:</strong>{{msg}}</p>
+    {% endif %}
+
+    <div><p><a href="{{url_for('login')}}">Already User? Please Log In </a>.</p>
+    </div>
+  </section>
+
+
+ </body>
+</html>
