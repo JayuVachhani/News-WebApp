@@ -4,21 +4,26 @@
     <meta charset="UTF-8">
     <title>User Registration</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel= "stylesheet" type="text/css" href= "{{ url_for('static',filename='styles/stylefiles.css') }}">
 </head>
 <body>
-<div id="wrapper">
-<h2 style="text-align:center;margin-top:15%">Login</h2>
-<section class="container" style="text-align:center;">
-      <div class="col-md-12">
-      <form method="post" action="" style="text-align:center; ">
-        <p><input style="text-align:center;border:2px solid green;width:190px;height:40px"   type="text" name="username" value="{{request.form.username}}" placeholder="Username or Email " required></p>
-        <p><input style="text-align:center;border:2px solid green;width:190px;height:40px" type="password"  name="password" value="{{request.form.password}}" placeholder="Password" required></p>
-        <input  class="btn btn-success"  type="submit" name="commit" value="Login">
-      </form><br>
+<h2>Login</h2>
+<section class="container">
+    <section class="row justify-content-center">
+        <section class="col-12 col-sm-6 col-md-3">
 
-    </div>
-    </div>
+      <form method="post" action="" style="text-align:center; " class="form-container">
+        <p><input class="form-control"   type="text" name="username" value="{{request.form.username}}" placeholder="Username or Email " required></p>
+        <p><input  type="password"  class="form-control" name="password" value="{{request.form.password}}" placeholder="Password" required></p>
+        <input  class="btn btn-success btn-block"  type="submit" name="commit" value="Login">
+      </form>
+
+
+
+</section>
+</section>
   </section>
-</div>
+
+
  </body>
 </html>

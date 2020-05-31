@@ -18,7 +18,6 @@ print (today.strftime("%Y - %m - %d  %H : %M : %S"))
 @app.route("/")
 def reg_mand():
     # passing reference of date variable
-
     return render_template("register.html",today=today)
 
 class RegistrationForm(Form):
@@ -164,6 +163,7 @@ if __name__ == "__main__":
     #if we don't want run everytime pass the debug = True
     # it will refresh everytime whenever changes is done
     app.secret_key = 'SECRET KEY'
+    
     app.run(debug=True)
 
 

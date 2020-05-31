@@ -3,31 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>User Registration</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel= "stylesheet" type="text/css" href= "{{ url_for('static',filename='styles/stylefiles.css') }}">
 </head>
 <body>
 
+    <h2>Register</h2>
+    <section class="container">
+    {% from "_helper.html" import render_field %}
+    <section class="row justify-content-center">
+        <section class="col-12 col-sm-6 col-md-3">
+      <form method="post"  action="/register/" class="form-container" >
+          <div class="form-group">
 
-<h2 style="text-align:center;margin-top:15%">Register</h2>
-<section class="container" style="text-align:center;">
-{% from "_helper.html" import render_field %}
+              <p><input type="text" class="form-control" name="username" id="exampleInputUsername" placeholder="Username"></p></div>
+          <div class="form-group">
 
-      <form method="post" action="/register/" >
-        <p><input type="text" style="text-align:center;border:2px solid green;width:190px;height:40px" name="username" value="" placeholder="Username"></p>
-          <p><input type="email" style="text-align:center;border:2px solid green;width:190px;height:40px" name="email" value="" placeholder="Email"></p>
-        <p><input type="password" style="text-align:center;border:2px solid green;width:190px;height:40px" name="password" value="" placeholder="Password"></p>
+               <p><input type="email"  class="form-control" name="email" id="exampleInputEmail" placeholder="Email"></p></div>
+          <div class="form-group">
+
+              <p><input type="password"  class="form-control" name="password" id="exampleInputPassword1" placeholder="Password"></p></div>
 
 
-        <input  class="btn btn-success" type="submit"  value="Register">
-      </form>
-    {% if error %}
-        <p class="error"><strong>Error:</strong>{{msg}}</p>
-    {% endif %}
+        <input  class="btn btn-success btn-block" type="submit" value="Register"><p></p>
 
-    <div><p><a href="{{url_for('login')}}">Already User? Please Log In </a>.</p>
+          <div><p><a href="{{url_for('login')}}">Already User? Please Log In </a>.</p>
     </div>
-  </section>
+
+      </form>
 
 
+    </section>
+    </section>
+    </section>
  </body>
 </html>

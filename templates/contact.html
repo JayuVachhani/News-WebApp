@@ -1,27 +1,26 @@
 {% extends 'home.html' %}
 {% block body %}
 
- <h3 style="text-align:center;margin-top:3%">Contact us</h3>
-
-
-
-<div class="container">
-  <form style="text-align:center;" method="post" action="/contact/"><br>
+ <h3>Contact us</h3>
+<section class="container" style="margin-top:5px">
+    <section class="row justify-content-center">
+        <section class="col-12 col-lg-6 col-md-12">
+  <form  method="post" action="/contact/" class="form-container"><br>
     <label>Full Name</label><br>
-    <input type="text" style="text-align:center;border:2px solid green;width:190px;height:40px" name="fullname" placeholder="Your full name.."><br>
+    <input type="text" class="form-control" name="fullname" placeholder="Your full name.."><br>
 
 
     <label>Email</label><br>
-    <input type="text" style="text-align:center;border:2px solid green;width:190px;height:40px" name="email" placeholder="Your Email id.."><br>
+    <input type="email" class="form-control" name="email" placeholder="Your Email id.."><br>
 
     <label>Problem Heading</label><br>
-    <input type="text"  style="text-align:center;border:2px solid green;width:190px;height:40px" name="heading" placeholder="Your Problem heading.."><br>
+    <input type="text"  class="form-control" name="heading" placeholder="Your Problem heading.."><br>
 
     <label >Subject</label><br>
-    <textarea id="subject" style="text-align:center;border:2px solid green;width:190px;height:40px;height:200px" name="subject" placeholder="Write something.." ></textarea><br>
+    <textarea id="subject" class="form-control" name="subject" placeholder="Write something.." ></textarea><br>
 
-    <input class="btn btn-primary" type="submit" value="Submit">
+    <input class="btn btn-primary btn-block" type="submit" value="Submit">
   </form>
 
-</div>
+        </section></section></section>
  {% endblock %}

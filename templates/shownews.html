@@ -1,24 +1,25 @@
 {% extends 'home.html' %}
 
 {% block body %}
+<section class="container" style="margin-top:5px">
+    <section class="row justify-content-center">
+        <section class="col-12 col-lg-6 col-md-12">
+            <table border = 1>
 
- <div class="col-sm-8">
-      <table border = 1>
-           <div class="container">
-               {% for row in rows %}
-  <h2>{{row['headlines'] }}</h2>
+                {% for row in rows %}
 
-  <div class="card" style="width:400px">
-
-    <div class="card-body">
-      <h4 class="card-title">{{ row['author'] }}</h4>
-         <p class="card-text">{{ row['category'] }}</p>
-      <p class="card-text">{{ row['description'] }}</p>
-    </div>
-  </div>
-  <br>
-{% endfor %}
-    </div>
-
-  </table>
-{% endblock %}
+                        <div class="card">
+                            <h4>{{row['headlines'] }}</h4>
+                            <div class="card-body">
+                              <h5 class="card-title">By:-{{ row['author'] }}</h5>
+                                 Category:-<p class="card-category">{{ row['category'] }}</p>
+                              <p class="card-text">{{ row['description'] }}</p>
+                            </div>
+                          </div>
+                          <br>
+                {% endfor %}
+            </table>
+        </section>
+    </section>
+</section>
+         {% endblock %}
