@@ -2,28 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>User Registration</title>
+    <title>User Login</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel= "stylesheet" type="text/css" href= "{{ url_for('static',filename='styles/stylefiles.css') }}">
+    <!-- jquery   -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- bootstrap js   -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+     <!-- fontawesome icons   -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 </head>
 <body>
+
 <h2>Login</h2>
 <section class="container">
     <section class="row justify-content-center">
-        <section class="col-12 col-sm-6 col-md-3">
+        <section class="col-12 col-sm-6 col-md-4">
+            <form method="post" action=""   class="form-container">
 
-      <form method="post" action="" style="text-align:center; " class="form-container">
-        <p><input class="form-control"   type="text" name="username" value="{{request.form.username}}" placeholder="Username or Email " required></p>
-        <p><input  type="password"  class="form-control" name="password" value="{{request.form.password}}" placeholder="Password" required></p>
-        <input  class="btn btn-success btn-block"  type="submit" name="commit" value="Login">
-      </form>
+                 <!--    username field      -->
+                <label for="username">
+                    <i class="fas fa-user" ></i>
+                </label>
+                <p><input class="form-control"   type="text" name="username" id="username" placeholder="Username or Email " required></p>
 
+                <label for="password">
+                    <i class="fas fa-lock"></i>
+                </label>
+                <p><input  type="password"  class="form-control" id="password" name="password"  placeholder="Password" required></p><br>
 
+                <div> <input  class="btn btn-success btn-block"  type="submit" name="commit" value="Login"><br>
 
+                <script type="text/javascript">
+
+                    $(document).ready(function () {
+
+                    window.setTimeout(function() {
+                        $(".msg").fadeTo(500, 0).slideUp(500, function(){
+                            $(this).remove();
+                        });
+                    }, 1500);
+
+                    });
+                </script>
+                    <div class="msg" style="color:white">{{ msg }}</div>
+                </div>
+            </form>
+        </section>
+    </section>
 </section>
-</section>
-  </section>
 
-
- </body>
+</body>
 </html>

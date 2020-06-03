@@ -1,25 +1,32 @@
 {% extends 'home.html' %}
 
 {% block body %}
+
+
 <section class="container" style="margin-top:5px">
     <section class="row justify-content-center">
         <section class="col-12 col-lg-6 col-md-12">
             <table border = 1>
-
+                <div class="alert aleret-success" style="text-align:center">{{ msg }}</div>
                 {% for row in rows %}
-
+                    <form method="post" action="/editnews/{{row[0]}}" class="form-container">
                         <div class="card">
-                            <h4>{{row['headlines'] }}</h4>
+                            <h4>{{row[1] }}</h4>
                             <div class="card-body">
-                              <h5 class="card-title">By:-{{ row['author'] }}</h5>
-                                 Category:-<p class="card-category">{{ row['category'] }}</p>
-                              <p class="card-text">{{ row['description'] }}</p>
+                              <h5 class="card-title">By:-{{ row[3] }}</h5>
+                                 Category:-<p class="card-category">{{ row[4] }}</p>
+                              <p class="card-text">{{ row[2] }}</p>
+                                <input type="submit" name="update" class="btn btn-success" value="Edit">
+                                <a href="{{url_for('delete',id=row[0])}}" class="btn btn-danger">Delete</a>
+
                             </div>
                           </div>
                           <br>
+                    </form>
                 {% endfor %}
             </table>
+
         </section>
     </section>
 </section>
-         {% endblock %}
+{% endblock %}

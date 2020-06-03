@@ -1,12 +1,18 @@
 {% extends 'home.html' %}
 
 {% block body %}
+ {% for message in get_flashed_messages() %}
+        <p>{{ message }}</p>
+    {% endfor %}
 
-<h3>BroadCast Webapp</h3>
-<ul>
-    <li>The BroadCast News app brings you news</li>
-    <li><strong>Push notifications</strong> for the latest important news stories</li>
-    <li>This Webapp allows you to create your own news </li>
-</ul>
+    <h2>BroadCast Webapp</h2>
+<p></p>
+        <ul>
+            <li>The BroadCast News app brings you news</li><br>
+            <li><strong>Push notifications</strong> for the latest important news stories</li><br>
+            <li>This Webapp allows you to create your own news </li><br>
+            <li>You can do changes of your news</li><br>
+            <li>You can contact us to ask your queries</li>
+        </ul>
 
-    {% endblock %}
+{% endblock %}
